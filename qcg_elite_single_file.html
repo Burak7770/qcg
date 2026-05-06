@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCG Consulting | Aktivieren Sie Ihr verborgenes Firmenkapital</title>
+    <meta name="description" content="Wir helfen Unternehmen, staatliche Förderungen durch das Qualifizierungschancengesetz (QCG) zu maximieren. 100% Kurskosten-Übernahme möglich.">
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    /* Color Palette - Luxury Slate & Champagne */
+    --color-bg: #0A0F1A;
+    --color-surface: #131B2D;
+    --color-surface-hover: #1E293B;
+    --color-primary: #BFA181; /* Champagne Gold */
+    --color-primary-glow: rgba(191, 161, 129, 0.3);
+    --color-text: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-accent: #E2E8F0;
+    --color-danger: #EF4444;
+
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Outfit', sans-serif;
+
+    /* Spacing */
+    --section-padding: 6rem 2rem;
+    --container-max-width: 1200px;
+    --container-width: 1200px;
+
+    /* Transitions */
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Glassmorphism Utility */
+.glass {
+    background: rgba(19, 27, 45, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.glass:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(191, 161, 129, 0.4);
+    transform: translateY(-8px);
+}
+
+/* Elite Rectangular Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    box-shadow: 0 10px 30px var(--color-primary-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px var(--color-primary-glow);
+    background-color: #d1b697;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* Animations */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+}
+
+[data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-surface);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Section Headings */
+.section-tag {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 99px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    background: rgba(191, 161, 129, 0.05);
+}
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-bg {
+    will-change: transform;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+/* Trust Bar */
+.trust-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin: 4rem 0;
+    filter: grayscale(1) opacity(0.5);
+    transition: var(--transition-smooth);
+}
+
+.trust-bar:hover {
+    filter: grayscale(0) opacity(1);
+}
+
+.trust-logo {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+.section-desc {
+    color: var(--color-text-muted);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+/* Sticky Nav Scrolled State */
+nav.scrolled {
+    background: rgba(10, 15, 26, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+    padding: 0.3rem 2rem !important;
+}
+
+/* Calculator Range Styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+#result-total {
+    text-shadow: 0 0 20px var(--color-primary-glow);
+    transition: var(--transition-smooth);
+}
+
+.calc-results:hover #result-total {
+    text-shadow: 0 0 40px var(--color-primary-glow);
+    transform: scale(1.05);
+}
+
+/* Hide Spinners for Number Input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px rgba(191, 161, 129, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(191, 161, 129, 0.4); }
+    100% { box-shadow: 0 0 20px rgba(191, 161, 129, 0.2); }
+}
+
+.pulse {
+    animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Bento Grid Desktop Compact */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bento-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+    padding: 2.5rem !important;
+    text-align: left !important;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-content h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.card-content p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 2.4rem;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin-bottom: 2rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+    }
+    
+    header.hero {
+        text-align: left;
+        padding-top: 7rem;
+        padding-bottom: 6rem;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1.25rem;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+    
+    nav {
+        padding: 0.8rem 1.2rem !important;
+        top: 0.75rem !important;
+    }
+    
+    /* Layout Overrides */
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 4rem !important;
+    }
+
+    .hero-card {
+        margin-top: 2rem;
+    }
+
+    /* Bento Grid Mobile - Extreme Compact */
+    .bento-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.15rem !important;
+    }
+
+    .bento-card {
+        padding: 0.25rem 0.5rem !important;
+        gap: 0.5rem !important;
+        border-radius: 0.5rem !important;
+        min-height: 0 !important;
+    }
+
+    .bento-card div[style*="background: rgba"], .card-icon {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 1.25rem !important;
+        margin-top: 0.15rem !important;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.1rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .card-content p {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+    }
+
+    div[style*="display: grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+    
+    .glass {
+        padding: 2.5rem 1.5rem !important;
+        border-radius: 1.5rem;
+    }
+
+    /* Comparison Section Mobile */
+    #numbers div[style*="grid-template-columns: 1fr 1fr"] {
+        gap: 2rem !important;
+    }
+
+    /* Process Mobile - Vertical list instead of grid */
+    #process div[style*="grid-template-columns: repeat(5, 1fr)"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4rem !important;
+    }
+
+    /* Universal Calculator Mobile Support */
+    .calculator-container {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 1.5rem !important;
+    }
+
+    .calc-inputs, .calc-results {
+        width: 100% !important;
+    }
+
+    #result-total {
+        font-size: clamp(2.2rem, 9vw, 3rem) !important;
+        line-height: 1.2 !important;
+        word-break: break-all;
+    }
+    
+    .calc-results div[style*="justify-content: space-between"] {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    /* Contact Form Mobile Optimization */
+    #contact form {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    #contact .glass {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    #contact label {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    #contact .btn-primary {
+        height: 3.5rem !important;
+        font-size: 0.9rem !important;
+        border-radius: 0 !important;
+    }
+
+    /* Trust Bar Mobile */
+    .trust-bar {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+        margin-top: 5rem !important;
+    }
+
+    /* Form Mobile */
+    form[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    input, select, button {
+        height: 3.5rem;
+    }
+
+    /* Hero Stats Mobile */
+    .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2.5rem !important;
+        margin-top: 3rem;
+    }
+
+    .hero-stats div:last-child {
+        grid-column: span 2;
+    }
+
+    .hero-stats .serif {
+        font-size: 2.2rem !important;
+    }
+
+    .pill-tag {
+        font-size: 0.65rem !important;
+        padding: 0.5rem 1.25rem !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; padding: 2.5rem 2rem; display: flex; justify-content: space-between; align-items: center; background: transparent;">
+        <div class="logo serif" style="font-size: 1.8rem; letter-spacing: 0.1em; font-weight: 700; color: var(--color-text);">QCG<span style="color: var(--color-primary);">ELITE</span></div>
+        <div class="hamburger" style="cursor: pointer;">
+            <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="30" height="2" fill="white"/>
+                <rect y="9" width="20" height="2" fill="white"/>
+                <rect y="18" width="30" height="2" fill="white"/>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" style="min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 6rem; padding-bottom: 6rem;">
+        <div class="hero-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(10, 15, 26, 0.85), rgba(10, 15, 26, 0.98)), url('assets/hero-bg-new.png') center/cover; z-index: -1;"></div>
+        <div class="container">
+            <div class="hero-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: center;">
+                
+                <!-- Hero Content (Left) -->
+                <div data-reveal class="hero-content" style="text-align: left;">
+                    <div class="pill-tag" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid var(--color-primary); border-radius: 99px; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 2.5rem; background: rgba(191, 161, 129, 0.05);">Mitarbeiter-Refinanzierung. Staatlich gefördert.</div>
+                    <h1 class="section-title" style="font-size: clamp(3.5rem, 8vw, 5.5rem); line-height: 1.1; margin-bottom: 2.5rem;">Sparen Sie <br><i style="color: var(--color-primary); font-family: var(--font-serif); font-weight: 400;">41.000 €</i> in 6 Monaten.</h1>
+                    <p class="section-desc" style="font-size: 1.15rem; max-width: 650px; margin-bottom: 3.5rem; color: var(--color-text-muted); line-height: 1.8;">Der Staat übernimmt <strong>bis zu 75 % der Gehälter</strong> und <strong>bis zu 100 % der Weiterbildungskosten</strong> – wir übernehmen die gesamte Bürokratie. Erfolgsabhängig, ohne Vorrisiko.</p>
+                    
+                    <div class="hero-actions" style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 4rem;">
+                        <a href="#contact" class="btn btn-primary" style="display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; padding: 1rem 2rem;">Förderung sichern</a>
+                        <a href="#numbers" class="btn btn-outline" style="font-size: 0.7rem; padding: 1rem 2rem;">Rechenbeispiel ansehen</a>
+                    </div>
+
+                    <div class="trust-list" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--color-text-muted);">
+                            <span style="color: var(--color-primary);">✓</span> Zertifizierte Bildungspartner
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--color-text-muted);">
+                            <span style="color: var(--color-primary);">✓</span> Erfolgsbasiertes Modell
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.8rem; color: var(--color-text-muted);">
+                            <span style="color: var(--color-primary);">✓</span> Höchste Diskretion
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Card (Right) -->
+                <aside data-reveal class="glass hero-card" style="padding: 0; overflow: hidden; border: 1px solid rgba(191, 161, 129, 0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.5); max-width: 450px; justify-self: center; width: 100%;">
+                    <div style="background: var(--color-primary); color: var(--color-bg); padding: 2rem 1.5rem; text-align: center;">
+                        <div class="serif" style="font-size: 2.8rem; font-weight: 700; line-height: 1;">41.000 €</div>
+                        <div style="font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-top: 0.75rem;">Gesamtersparnis (2 MA / 6 Monate)</div>
+                        <div style="font-size: 0.55rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.6; margin-top: 0.25rem;">Basis: 3.000 € Brutto / Mitarbeiter</div>
+                    </div>
+                    <div style="padding: 2rem 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 1rem;">
+                            <span style="color: var(--color-text-muted); font-size: 0.85rem;">Normale Gehaltskosten</span>
+                            <span style="text-decoration: line-through; opacity: 0.4; font-size: 0.9rem;">36.000 €</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 1rem;">
+                            <span style="color: var(--color-text-muted); font-size: 0.85rem;">Staatliche Förderung (75%)</span>
+                            <span style="color: var(--color-primary); font-weight: 700; font-size: 0.95rem;">- 27.000 €</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 1rem;">
+                            <span style="color: var(--color-text-muted); font-size: 0.85rem;">Weiterbildungskosten</span>
+                            <span style="color: var(--color-primary); font-weight: 700; font-size: 0.95rem;">0 € (Staat übernimmt 14k)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.5rem; font-weight: 700; font-size: 1.1rem;">
+                            <span>Monatlich zahlen Sie</span>
+                            <span style="color: var(--color-text);">1.500 €</span>
+                        </div>
+                        
+                        <!-- Mini Loss Alert -->
+                        <div style="margin-top: 2rem; padding: 1rem; background: rgba(239, 68, 68, 0.08); border-radius: 0.75rem; display: flex; gap: 0.75rem; align-items: center; border: 1px solid rgba(239, 68, 68, 0.15);">
+                            <div style="width: 20px; height: 20px; background: var(--color-danger); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 900; font-size: 0.65rem;">!</div>
+                            <p style="font-size: 0.75rem; line-height: 1.4; color: var(--color-text); margin: 0;">Jeder Monat ohne Förderung kostet Sie <strong>6.833 €</strong> – das sind <strong>228 €</strong> täglich.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why Section -->
+    <section id="why" style="padding: var(--section-padding); background: var(--color-bg);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+                <div data-reveal>
+                    <div class="section-tag">Der Preis des Zögerns</div>
+                    <h2 class="section-title">Warum warten <br>keine Option ist.</h2>
+                    <p class="section-desc">Qualifizieren Sie Ihr Team ohne staatliche Hilfe? Dann verschenken Sie bares Geld. Bei nur 2 Mitarbeitern in der Weiterbildung entgehen Ihnen monatlich signifikante Lohnkostenzuschüsse – Geld, das direkt aus Ihrem Gewinn fließt.</p>
+                    
+                    <div class="glass" style="padding: 2.5rem; margin-top: 2rem; border-left: 4px solid var(--color-danger); background: rgba(239, 68, 68, 0.05);">
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Verpasste Refinanzierung (Beispiel 2 MA)</div>
+                        <div class="serif" style="font-size: 3.5rem; color: var(--color-danger); font-weight: 700;">4.500,00 €</div>
+                        <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem;">Monatlicher Zuschuss (LKZ), den Sie aktuell verschenken.</div>
+                    </div>
+                </div>
+                <div data-reveal style="position: relative;">
+                    <div class="bento-grid">
+                        <div class="glass bento-card" style="grid-column: span 2;">
+                            <div class="card-icon" style="background: rgba(191, 161, 129, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💰</div>
+                            <div class="card-content">
+                                <h3>Kapitalfreisetzung</h3>
+                                <p>Nutzen Sie staatliche Mittel, um Ihr eigenes Budget zu schonen und gleichzeitig das Know-how zu steigern.</p>
+                            </div>
+                        </div>
+                        <div class="glass bento-card" style="grid-column: span 2;">
+                            <div class="card-icon" style="background: rgba(191, 161, 129, 0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🛡️</div>
+                            <div class="card-content">
+                                <h3>Bürokratie-Schutz</h3>
+                                <p>Wir übernehmen die komplette Kommunikation mit der Agentur für Arbeit. 100% rechtssicher.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="numbers" style="padding: var(--section-padding); background: #0c121e;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <div class="section-tag">Elite-Rechner</div>
+                <h2 class="section-title">Ihr Potenzial in <span style="color: var(--color-primary);">Zahlen.</span></h2>
+            </div>
+            
+            <div class="glass calculator-container" style="max-width: 1000px; margin: 0 auto; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <div class="calc-inputs" style="display: grid; gap: 2rem;">
+                    <div>
+                        <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block; color: var(--color-primary); font-weight: 600;">Anzahl Mitarbeiter</label>
+                        <div style="display: flex; gap: 1.5rem; align-items: center;">
+                            <input type="range" id="employee-range" min="1" max="100" value="5" style="flex: 1;">
+                            <input type="number" id="employee-input" value="5" style="width: 60px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem; color: white; border-radius: 5px; text-align: center;">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block; color: var(--color-primary); font-weight: 600;">Bruttogehalt (Durchschnitt)</label>
+                        <input type="number" id="salary-input" value="3500" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.25rem; color: white; border-radius: 0.75rem; font-size: 1.1rem;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block; color: var(--color-primary); font-weight: 600;">Bundesland (Regionalbonus)</label>
+                        <select id="state-input" style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.25rem; color: white; border-radius: 0.75rem; font-size: 1.1rem; appearance: none;">
+                            <option value="NW">Nordrhein-Westfalen</option>
+                            <option value="BY">Bayern</option>
+                            <option value="BW">Baden-Württemberg</option>
+                            <option value="BE">Berlin</option>
+                            <option value="HH">Hamburg</option>
+                            <option value="HE">Hessen</option>
+                            <option value="Other">Andere Bundesländer</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="calc-results" style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 1rem;">
+                    <div style="margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1.5rem;">
+                        <div style="color: var(--color-text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Geschätzte Förderung / 6 Monate</div>
+                        <div id="result-total" class="serif" style="font-size: 4rem; color: var(--color-primary); font-weight: 700; line-height: 1;">64.500€</div>
+                    </div>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span style="color: var(--color-text-muted);">Lohnkostenzuschuss</span>
+                            <span id="result-wage">47.250€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span style="color: var(--color-text-muted);">Schulungskosten</span>
+                            <span id="result-course">14.250€</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                            <span style="color: var(--color-text-muted);">Regionaler Bonus</span>
+                            <span id="result-bonus">3.000€</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 2.5rem; justify-content: center; height: 3rem; font-size: 0.7rem;">Förderung sichern</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section style="padding: var(--section-padding); background: var(--color-bg);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <div class="glass" style="padding: 3rem; border-top: 4px solid var(--color-danger);">
+                    <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 2rem;">Ohne Förderung</h3>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-text-muted);">
+                        <span>Bruttolohn (2 MA à 3.000 €)</span>
+                        <span>6.000 €</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-text-muted);">
+                        <span>Lohnnebenkosten (ca. 20%)</span>
+                        <span>1.200 €</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-text-muted);">
+                        <span>Weiterbildung (extern)</span>
+                        <span>Selbstzahler</span>
+                    </div>
+                    <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 700;">
+                        <span>Gesamtkosten</span>
+                        <span style="color: var(--color-danger);">7.200 €</span>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 1rem;">* Monatliche Belastung für Ihr Unternehmen.</p>
+                </div>
+
+                <div class="glass pulse" style="padding: 3rem; border-top: 4px solid var(--color-primary); background: linear-gradient(135deg, rgba(19, 27, 45, 0.8), rgba(191, 161, 129, 0.1));">
+                    <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 2rem;">Mit QCG Elite</h3>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-primary);">
+                        <span>Lohnkostenzuschuss (75%)</span>
+                        <span>- 4.500 €</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-primary);">
+                        <span>SV-Pauschale (20%)</span>
+                        <span>- 900 €</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--color-primary);">
+                        <span>Weiterbildung (100%)</span>
+                        <span>Übernommen</span>
+                    </div>
+                    <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--color-primary); display: flex; justify-content: space-between; font-size: 1.5rem; font-weight: 700;">
+                        <span>Ihre Kosten</span>
+                        <span style="color: var(--color-primary);">1.500 €</span>
+                    </div>
+                    <div style="background: var(--color-primary); color: var(--color-bg); padding: 0.5rem 1rem; border-radius: 0.5rem; display: inline-block; margin-top: 1.5rem; font-weight: 700; font-size: 0.875rem;">
+                        Ersparnis: 6.833 € / Monat
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" style="padding: var(--section-padding); background: linear-gradient(to bottom, var(--color-bg), #0c121e);">
+        <div class="container">
+            <div class="glass" style="max-width: 900px; margin: 0 auto; padding: 5rem 3rem; text-align: center; border-color: rgba(191, 161, 129, 0.3);">
+                <div class="section-tag">Anfrage</div>
+                <h2 class="section-title">Ihr exklusives <span style="color: var(--color-primary);">Erstgespräch.</span></h2>
+                <p class="section-desc" style="margin: 0 auto 3rem;">In nur 15 Minuten klären wir, wie hoch Ihr Förderschatz wirklich ist. Unverbindlich & diskret.</p>
+                <form style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div class="form-group">
+                        <label style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; display: block; color: var(--color-primary); font-weight: 600;">Vorname & Nachname</label>
+                        <input type="text" placeholder="Maximilian Muster" style="width: 100%; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--color-text); border-radius: 0.75rem; font-family: var(--font-sans);">
+                    </div>
+                    <div class="form-group">
+                        <label style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; display: block; color: var(--color-primary); font-weight: 600;">Unternehmen</label>
+                        <input type="text" placeholder="Firma GmbH" style="width: 100%; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--color-text); border-radius: 0.75rem; font-family: var(--font-sans);">
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; display: block; color: var(--color-primary); font-weight: 600;">Geschäftliche E-Mail</label>
+                        <input type="email" placeholder="m.muster@firma.de" style="width: 100%; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--color-text); border-radius: 0.75rem; font-family: var(--font-sans);">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1; justify-content: center; margin-top: 1rem; height: 4rem; font-size: 0.9rem;">Termin reservieren</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 4rem 0; background: #070b14; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+            <div class="logo serif" style="font-size: 1.5rem; font-weight: 700;">QCG<span style="color: var(--color-primary);">ELITE</span></div>
+            <div style="display: flex; gap: 2.5rem; font-size: 0.85rem; color: var(--color-text-muted);">
+                <a href="#" style="color: inherit; text-decoration: none;">Impressum</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Datenschutz</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Kontakt</a>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--color-text-muted);">© 2024 QCG Consulting Elite. Alle Rechte vorbehalten.</div>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Reveal Animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Funding Calculator Logic
+    const employeeRange = document.getElementById('employee-range');
+    const employeeInput = document.getElementById('employee-input');
+    const salaryInput = document.getElementById('salary-input');
+    const stateInput = document.getElementById('state-input');
+    
+    const resultTotal = document.getElementById('result-total');
+    const resultWage = document.getElementById('result-wage');
+    const resultCourse = document.getElementById('result-course');
+    const resultBonus = document.getElementById('result-bonus');
+
+    const updateCalculator = () => {
+        const count = parseInt(employeeInput.value) || 0;
+        const salary = parseInt(salaryInput.value) || 0;
+        const state = stateInput.value;
+
+        // 1. QCG Base Logic (75% wage subsidy, 7000€ avg training cost)
+        const wageSubsidyRate = 0.75; 
+        const courseCostsPerPerson = 7000;
+
+        const totalWageSubsidy = count * salary * wageSubsidyRate * 6; // 6 months
+        const totalCourseSubsidy = count * courseCostsPerPerson;
+
+        // 2. Regional Bonus Logic (ESF+ and State Programs)
+        let stateBonusPerPerson = 500; // Base bonus
+        if (['BW', 'BY', 'NW'].includes(state)) stateBonusPerPerson = 1000; // Strong state grants
+        if (['BE', 'HH'].includes(state)) stateBonusPerPerson = 1500; // High urban subsidies
+        if (['HE', 'RP', 'HB'].includes(state)) stateBonusPerPerson = 800;
+
+        const totalStateBonus = count * stateBonusPerPerson;
+        
+        const total = totalWageSubsidy + totalCourseSubsidy + totalStateBonus;
+
+        resultTotal.innerText = `${total.toLocaleString('de-DE')}€`;
+        resultWage.innerText = `${totalWageSubsidy.toLocaleString('de-DE')}€`;
+        resultCourse.innerText = `${totalCourseSubsidy.toLocaleString('de-DE')}€`;
+        resultBonus.innerText = `${totalStateBonus.toLocaleString('de-DE')}€`;
+    };
+
+    if (employeeRange) {
+        employeeRange.addEventListener('input', () => {
+            employeeInput.value = employeeRange.value;
+            updateCalculator();
+        });
+        employeeInput.addEventListener('input', () => {
+            employeeRange.value = employeeInput.value;
+            updateCalculator();
+        });
+        salaryInput.addEventListener('input', updateCalculator);
+        stateInput.addEventListener('change', updateCalculator);
+        updateCalculator();
+    }
+
+    // Sticky Nav & Parallax Logic
+    const nav = document.querySelector('nav');
+    const heroBg = document.querySelector('.hero-bg');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+
+        // Sticky Nav
+        if (scrolled > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+
+        // Parallax Effect
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+        }
+    });
+});
+    </script>
+</body>
+</html>
